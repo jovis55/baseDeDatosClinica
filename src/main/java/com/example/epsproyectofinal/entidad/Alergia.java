@@ -16,6 +16,7 @@ import java.util.List;
 public class Alergia implements Serializable {
     @Id
     @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idAlergia", length = 5, nullable = false)
     private Integer idAlergia;
 

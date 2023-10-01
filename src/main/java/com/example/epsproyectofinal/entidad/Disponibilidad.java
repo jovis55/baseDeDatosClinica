@@ -15,7 +15,7 @@ import java.util.Date;
 public class Disponibilidad implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idDisponibilidad", length = 10, nullable = false)
     private int idDisponibilidad;
 

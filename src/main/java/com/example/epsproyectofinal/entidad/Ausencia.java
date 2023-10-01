@@ -15,7 +15,7 @@ import java.util.Date;
 public class Ausencia implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idAusencia", length = 10, nullable = false)
     private int idAusencia;
 

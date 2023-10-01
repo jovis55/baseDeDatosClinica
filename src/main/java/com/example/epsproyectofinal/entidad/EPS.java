@@ -15,7 +15,7 @@ import java.util.List;
 public class EPS {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idEPS", length = 10, nullable = false)
     private int idEPS;
 

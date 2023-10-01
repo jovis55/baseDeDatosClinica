@@ -16,7 +16,7 @@ import java.util.List;
 public class Medicamento implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idMedicamento", length = 10, nullable = false)
     private int idMedicamento;
 

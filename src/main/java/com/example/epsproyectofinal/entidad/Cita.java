@@ -14,10 +14,10 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Cita extends Usuario implements Serializable {
+public class Cita implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idCita", length = 10, nullable = false)
     private int idCita;
 

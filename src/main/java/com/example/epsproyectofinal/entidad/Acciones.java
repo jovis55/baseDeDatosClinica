@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Acciones implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idAccion", length = 10, nullable = false)
     private int idAccion;
 

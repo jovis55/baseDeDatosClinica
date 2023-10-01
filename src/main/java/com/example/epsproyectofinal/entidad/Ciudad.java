@@ -15,7 +15,7 @@ import java.util.List;
 public class Ciudad implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idCiudad", length = 10, nullable = false)
     private int idCiudad;
 
