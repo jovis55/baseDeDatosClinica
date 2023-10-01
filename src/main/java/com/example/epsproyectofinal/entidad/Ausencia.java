@@ -1,4 +1,4 @@
-package com.example.epsproyectofinal.entidades;
+package com.example.epsproyectofinal.entidad;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Getter

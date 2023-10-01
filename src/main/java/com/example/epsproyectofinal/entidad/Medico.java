@@ -1,10 +1,9 @@
-package com.example.epsproyectofinal.entidades;
+package com.example.epsproyectofinal.entidad;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.Fetch;
 
 import java.io.Serializable;
 import java.util.List;

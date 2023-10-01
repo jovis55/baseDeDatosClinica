@@ -1,4 +1,4 @@
-package com.example.epsproyectofinal.entidades;
+package com.example.epsproyectofinal.entidad;
 
 public enum TipoSangre {
     A_POSITIVO,

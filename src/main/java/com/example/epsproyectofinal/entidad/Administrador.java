@@ -1,4 +1,4 @@
-package com.example.epsproyectofinal.entidades;
+package com.example.epsproyectofinal.entidad;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
