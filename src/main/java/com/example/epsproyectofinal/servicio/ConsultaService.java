@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class ConsultaService {
+public class ConsultaService implements ConsultaIn {
     @Autowired
     ConsultaRepository consultaRepository;
 }

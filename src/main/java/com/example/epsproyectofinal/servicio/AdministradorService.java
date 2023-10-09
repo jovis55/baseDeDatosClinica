@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class AdministradorService {
+public class AdministradorService implements AdministradorIn {
     @Autowired
     AdministradorRepository administradorRepository;
 }

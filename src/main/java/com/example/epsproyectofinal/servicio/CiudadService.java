@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class CiudadService {
+public class CiudadService implements CitaIn {
     @Autowired
     CiudadRepository ciudadRepository;
 }

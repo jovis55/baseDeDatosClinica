@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class PQRSService {
+public class PQRSService implements PQRSIn {
     @Autowired
     PQRSRepository pqrsRepository;
 }

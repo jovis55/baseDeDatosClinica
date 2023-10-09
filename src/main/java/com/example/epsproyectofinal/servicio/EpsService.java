@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class EpsService {
+public class EpsService implements EpsIn{
     @Autowired
     EpsRepository epsRepository;
 }

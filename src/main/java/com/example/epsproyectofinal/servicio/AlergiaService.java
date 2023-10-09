@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class AlergiaService {
+public class AlergiaService implements AlergiaIn{
     @Autowired
     AlergiaRepository alergiaRepository;
 }

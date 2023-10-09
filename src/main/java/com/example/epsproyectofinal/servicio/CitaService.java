@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class CitaService {
+public class CitaService implements CitaIn{
     @Autowired
     CitaRepository citaRepository;
 }

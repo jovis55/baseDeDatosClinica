@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class DisponibilidadService {
+public class DisponibilidadService implements DisponibilidadIn{
     @Autowired
     DisponibilidadRepository disponibilidadRepository;
 }

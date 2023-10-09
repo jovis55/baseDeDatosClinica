@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class AusenciaService {
+public class AusenciaService implements AusenciaIn {
     @Autowired
     AusenciaRepository ausenciaRepository;
 }
