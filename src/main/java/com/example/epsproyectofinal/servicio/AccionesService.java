@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class AccionesService {
+public class AccionesService implements AccionesIn{
     @Autowired
     AccionesRepository accionesRepository;
 }
