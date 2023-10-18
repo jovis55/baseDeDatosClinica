@@ -26,6 +26,7 @@ public class Ausencia implements Serializable {
     private String estadoAusencia;
 
     @ManyToOne
+    @JoinColumn(name = "medico_idUsuario")
     private Medico medico;
 
 }

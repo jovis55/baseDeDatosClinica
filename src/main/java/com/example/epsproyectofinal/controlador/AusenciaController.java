@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ausencia")
 
 public class AusenciaController {
+
     @Autowired
     AusenciaService ausenciaService;
 }
