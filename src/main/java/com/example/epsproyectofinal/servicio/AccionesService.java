@@ -47,7 +47,7 @@ public class AccionesService implements AccionesIn{
     }
 
 
-
+//eliminarAccion con id
     @Override
     public void eliminarAccion(int accionId) throws AttributeException {
         if (existeAccion(accionId)) {
