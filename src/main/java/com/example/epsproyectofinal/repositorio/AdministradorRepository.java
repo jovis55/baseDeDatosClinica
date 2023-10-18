@@ -5,5 +5,5 @@ import com.example.epsproyectofinal.entidad.Administrador;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AdministradorRepository extends JpaRepository<Administrador, String> {
-    
+    Administrador findByNombreUsuario(String nombreUsuario);
 }
