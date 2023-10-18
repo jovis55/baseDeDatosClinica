@@ -5,6 +5,7 @@ import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
 
 import java.util.List;
 
+@Service
 public interface AccionesIn {
     Acciones crearAccion(Acciones accion) throws AttributeException;
     Acciones actualizarAccion(Acciones accion) throws AttributeException;
