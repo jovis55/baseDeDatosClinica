@@ -1,9 +1,14 @@
 package com.example.epsproyectofinal.servicio;
 
-import com.example.epsproyectofinal.repositorio.AccionesRepository;
+import com.example.epsproyectofinal.entidad.Ciudad;
 import com.example.epsproyectofinal.repositorio.CiudadRepository;
+import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -13,7 +18,7 @@ public class CiudadService implements CiudadIn {
     private CiudadRepository ciudadRepository;
 
     @Autowired
-    public ciudadService(CiudadRepository ciudadRepository) {
+    public CiudadService(CiudadRepository ciudadRepository) {
         this.ciudadRepository = ciudadRepository;
     }
 

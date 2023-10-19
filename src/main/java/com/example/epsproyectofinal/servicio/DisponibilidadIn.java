@@ -1,5 +1,8 @@
 package com.example.epsproyectofinal.servicio;
 
+import com.example.epsproyectofinal.entidad.Disponibilidad;
+import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
+
 public interface DisponibilidadIn {
 
     Disponibilidad crearDisponibilidad (Disponibilidad disponibilidad) throws AttributeException;

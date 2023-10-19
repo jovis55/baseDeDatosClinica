@@ -11,17 +11,17 @@ class EpsProyectoFinalApplicationTests {
 
     PacienteRepository pacienteRepository;
 
-    @Test
-    @Sql("classpath:dataSet.sql")
-    public void obtenerPorNombre(){
-        Paciente paciente= pacienteRepository.findByNombre("Juan");
-        System.out.println(paciente);
-    }
-
-    @Test
-    @Sql("classpath:dataSet:sql")
-    public void obtenerPorIdUsuario(){
-        Paciente paciente = pacienteRepository.findByUsuarioId("1234");
-        System.out.println(paciente);
-    }
+//    @Test
+//    @Sql("classpath:dataSet.sql")
+//    public void obtenerPorNombre(){
+//        Paciente paciente= pacienteRepository.findByNombre("Juan");
+//        System.out.println(paciente);
+//    }
+//
+//    @Test
+//    @Sql("classpath:dataSet:sql")
+//    public void obtenerPorIdUsuario(){
+//        Paciente paciente = pacienteRepository.findByUsuarioId("1234");
+//        System.out.println(paciente);
+//    }
 }

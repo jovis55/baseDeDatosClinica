@@ -2,6 +2,7 @@ package com.example.epsproyectofinal.servicio;
 
 import com.example.epsproyectofinal.entidad.Acciones;
 import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

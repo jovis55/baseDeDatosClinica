@@ -1,9 +1,15 @@
 package com.example.epsproyectofinal.servicio;
 
+import com.example.epsproyectofinal.entidad.Cita;
 import com.example.epsproyectofinal.repositorio.AccionesRepository;
 import com.example.epsproyectofinal.repositorio.CitaRepository;
+import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional

@@ -1,9 +1,14 @@
 package com.example.epsproyectofinal.servicio;
 
+import com.example.epsproyectofinal.entidad.Disponibilidad;
 import com.example.epsproyectofinal.repositorio.AccionesRepository;
 import com.example.epsproyectofinal.repositorio.DisponibilidadRepository;
+import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @Transactional

@@ -1,9 +1,15 @@
 package com.example.epsproyectofinal.servicio;
 
-import com.example.epsproyectofinal.repositorio.AccionesRepository;
+import com.example.epsproyectofinal.entidad.Consulta;
 import com.example.epsproyectofinal.repositorio.ConsultaRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
+
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -13,7 +19,7 @@ public class ConsultaService implements ConsultaIn {
     private ConsultaRepository consultaRepository;
 
     @Autowired
-    public consultaService(ConsultaRepository consultaRepository) {
+    public ConsultaService(ConsultaRepository consultaRepository) {
         this.consultaRepository = consultaRepository;
     }
 
@@ -43,7 +49,7 @@ public class ConsultaService implements ConsultaIn {
     }
 
     @Override
-    public void eliminarConsulta (int idConsulta) throws AttributeException {
+    public void eliminarConsultas (int idConsulta) throws AttributeException {
         if (existeConsulta (idConsulta)) {
             consultaRepository.deleteById(idConsulta);
         } else {
@@ -57,7 +63,7 @@ public class ConsultaService implements ConsultaIn {
     }
 
     @Override
-    public List<Consulta> listarConsulta() throws AttributeException {
+    public List<Consulta> listarConsultas() throws AttributeException {
         try {
             return consultaRepository.findAll();
         } catch (Exception e) {

@@ -1,5 +1,10 @@
 package com.example.epsproyectofinal.servicio;
 
+import com.example.epsproyectofinal.entidad.Ciudad;
+import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
+
+import java.util.List;
+
 public interface CiudadIn {
 
     Ciudad crearCiudad (Ciudad ciudad) throws AttributeException;
