@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @ToString
 public class Medico extends Usuario implements Serializable {
-    @Column(name="imageByte", length = 500, nullable = false)
+    @Column(name="imageByte", length = 500, nullable = true)
     private byte[] imageByte;
 
     @Column(name="nombre", length = 100, nullable = false)
