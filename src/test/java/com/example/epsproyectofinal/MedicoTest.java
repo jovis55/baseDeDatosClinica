@@ -40,7 +40,7 @@ class MedicoTest {
 
     @Test
     //@Sql("classpath:dataset.sql")
-    public void obtnerByespecialidad1() throws AttributeException {
+    public void listarMedico() throws AttributeException {
         List<Medico> medicosEncontrados = medicoService.listarMedicos();
 
         assertEquals(2, medicosEncontrados.size());
