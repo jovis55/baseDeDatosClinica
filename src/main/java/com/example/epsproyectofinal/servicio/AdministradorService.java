@@ -25,7 +25,7 @@ public class AdministradorService implements AdministradorIn {
     @Override
     public Administrador crearAdministrador(Administrador administrador) throws AttributeException {
         // Verifica si ya existe un administrador con el mismo nombre de usuario
-        Administrador administradorExistente = administradorRepository.findByNombreUsuario(administrador.getNombre());
+        Administrador administradorExistente = administradorRepository.findByNombre(administrador.getNombre());
 
         if (administradorExistente != null) {
             throw new AttributeException("Ya existe un administrador con este nombre de usuario.") {
