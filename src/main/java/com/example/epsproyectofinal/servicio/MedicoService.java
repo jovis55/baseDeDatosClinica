@@ -6,6 +6,7 @@ import com.example.epsproyectofinal.repositorio.AccionesRepository;
 import com.example.epsproyectofinal.repositorio.MedicoRepository;
 import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,15 +14,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
-
+@RequiredArgsConstructor
 public class MedicoService implements MedicoIn{
-    @Autowired
-    MedicoRepository medicoRepository;
 
-    public MedicoService(MedicoRepository medicoRepository) {
-        this.medicoRepository = medicoRepository;
-    }
+    private final MedicoRepository medicoRepository;
 
     @Override
     public Medico crearMedico(Medico medico) throws AttributeException {
