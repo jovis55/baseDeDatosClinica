@@ -1,5 +1,7 @@
 package com.example.epsproyectofinal.entidad;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,10 +15,10 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idUsuario")
 
 public class Paciente extends Usuario implements Serializable {
-    @Column(name="imageByte", length = 500, nullable = false)
-    private byte[] imageByte;
+
 
     @Column(name="nombre", length = 100, nullable = false)
     private String nombre;
@@ -24,32 +26,28 @@ public class Paciente extends Usuario implements Serializable {
     @Column(name="telefono", length = 20, nullable = false)
     private String telefono;
 
-    @Column(name="fechaNacimiento", nullable = false)
+    @Column(name="fechaNacimiento", nullable = true)
     private Date fechaNacimiento;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private EPS eps;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Ciudad ciudad;
 
     @OneToMany(mappedBy = "paciente")
     private List<Cita> citaList ;
 
-    @ManyToMany(fetch =  FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinTable(
-            name = "alergia_Paciente",
-            joinColumns = @JoinColumn(name = "paciente_id", referencedColumnName =  "idUsuario"),
-            inverseJoinColumns = @JoinColumn(name = "alergia_id", referencedColumnName = "idAlergia")
-    )
-    private List<Alergia> alergiaList;
-    @MapsId
-    @JoinColumn(name = "idUsuario") // Nombre de la columna en Medico que se mapeará al ID de Usuario
-    private String idUsuario;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "tipoSangre", length = 10, nullable = false)
     private TipoSangre tipoSangre;
 
+
+    @Column(name = "imagen_url", length = 200, nullable = true)
+    private String imagenUrl;
+
+
+    @ManyToMany(fetch =  FetchType.EAGER)
+    private List<Alergia> alergiaList;
 
 }

@@ -27,7 +27,7 @@ class MedicoTest {
     private MedicoRepository medicoRepository;
 
     @Test
-    //@Sql("classpath:dataset.sql")
+    //@Sql("classpath:data.sql")
     public void obtnerByespecialidad() throws AttributeException {
         String especialidadBuscada = "Cardiologia";
 
@@ -39,7 +39,7 @@ class MedicoTest {
     }
 
     @Test
-    //@Sql("classpath:dataset.sql")
+    //@Sql("classpath:data.sql")
     public void listarMedico() throws AttributeException {
         List<Medico> medicosEncontrados = medicoService.listarMedicos();
 

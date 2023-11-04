@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -16,15 +17,14 @@ public class UsuarioService implements UsuarioIn {
     @Autowired
     UsuarioRepository usuarioRepository;
 
+
+
     @Override
-    public Usuario crearUsuario(Usuario usuario) throws Exception {
-        try{
-            return usuarioRepository.save(usuario);
-        }
-        catch (Exception e){
-            throw new AttributeException("El usuario no se ha podido registrar en la base de datos");
-        }
+    public Optional<Usuario> buscarUsuarioId(String idUsuario) {
+        return usuarioRepository.findById(idUsuario);
     }
+
+
 
     @Override
     public Usuario modificarUsuario(Usuario usuario) throws Exception {

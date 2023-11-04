@@ -1,6 +1,7 @@
 package com.example.epsproyectofinal.servicio;
 
 import com.example.epsproyectofinal.entidad.Alergia;
+import com.example.epsproyectofinal.entidad.Paciente;
 import com.example.epsproyectofinal.repositorio.AlergiaRepository;
 import com.example.epsproyectofinal.servicio.excepciones.AttributeException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,11 @@ public class AlergiaService implements AlergiaIn{
     }
 
     @Override
-    public Alergia actualizarAlergia(Alergia alergia) throws AttributeException {
+    public Alergia actualizarAlergia(Alergia alergia, Paciente paciente) throws AttributeException {
         try {
+            List<Paciente> pacienteL = alergia.getPacienteList();
+            pacienteL.add(paciente);
+            alergia.setPacienteList(pacienteL);
             return alergiaRepository.save(alergia);
         } catch (Exception e) {
             throw new AttributeException("No se pudo actualizar la alergia");

@@ -22,7 +22,7 @@ public class AccionesService implements AccionesIn{
     }
 
     @Override
-    public Acciones crearAccion(Acciones accion) throws AttributeException {
+    public Acciones crearAccion(Acciones accion) {
         return accionesRepository.save(accion);
     }
 

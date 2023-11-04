@@ -22,6 +22,6 @@ public class EPS {
     @Column(name="nombre", length = 100, nullable = false)
     private String nombre;
 
-    @OneToMany(mappedBy="eps")
+    @OneToMany(mappedBy="eps", fetch = FetchType.EAGER)
     private List<Paciente> pacienteList;
 }
