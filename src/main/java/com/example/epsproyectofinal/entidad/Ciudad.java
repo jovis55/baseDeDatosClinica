@@ -25,7 +25,7 @@ public class Ciudad implements Serializable {
     @OneToMany(mappedBy = "ciudad")
     private List<Medico> medicoList;
 
-    @OneToMany(mappedBy = "ciudad")
+    @OneToMany(mappedBy = "ciudad", fetch = FetchType.EAGER)
     private List<Paciente> pacienteList ;
 
 

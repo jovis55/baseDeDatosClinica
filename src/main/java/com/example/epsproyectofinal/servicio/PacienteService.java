@@ -20,12 +20,13 @@ public class PacienteService implements PacienteIn{
     }
 
     @Override
-    public Paciente registrarPaciente(Paciente paciente) throws Exception {
+    public Paciente registrarPaciente(Paciente paciente) {
         try{
             return pacienteRepository.save(paciente);
         }
         catch (Exception e) {
-            throw new AttributeException("No se ha podido registrar el paciente en la abse de datos");
+            System.out.println("No se ha podido registrar el paciente en la abse de datos");
+            return null;
         }
     }
 

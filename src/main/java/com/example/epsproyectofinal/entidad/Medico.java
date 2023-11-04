@@ -13,8 +13,7 @@ import java.util.List;
 @Setter
 @ToString
 public class Medico extends Usuario implements Serializable {
-    @Column(name="imageByte", length = 500, nullable = true)
-    private byte[] imageByte;
+
 
     @Column(name="nombre", length = 100, nullable = false)
     private String nombre;
@@ -41,9 +40,10 @@ public class Medico extends Usuario implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "especialidad_id", referencedColumnName = "idEspecialidad")
     )
     private List<Especialidad> especialidades;
-    @MapsId
-    @JoinColumn(name = "idUsuario") // Nombre de la columna en Medico que se mapeará al ID de Usuario
-    private String idUsuario;
+
+
+    @Column(name = "imagenUrl", length = 200, nullable = true)
+    private String imagenUrl;
 
 
 

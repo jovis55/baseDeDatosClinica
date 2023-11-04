@@ -26,7 +26,8 @@ public class Alergia implements Serializable {
     @Column(name="descripcion", length = 200, nullable = true)
     private String descripcion;
 
-    @ManyToMany(mappedBy = "alergiaList")
+    @ManyToMany(mappedBy = "alergiaList", fetch =  FetchType.EAGER)
     private List<Paciente> pacienteList;
+
 
 }
