@@ -14,4 +14,5 @@ public interface MedicoIn {
     void eliminarMedicos(String medicoId) throws AttributeException;
     boolean existemedico(String medicoId) throws AttributeException;
     List<Medico> obtenerMedicoByEspecialidad(String especialidad) throws AttributeException;
+    List<Medico> obtenerMedicoByEspecialidadId(int especialidadId) throws AttributeException;
 }

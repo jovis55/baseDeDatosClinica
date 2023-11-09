@@ -15,6 +15,9 @@ import java.util.List;
 public interface MedicoRepository extends JpaRepository<Medico, String> {
     @Query("SELECT m FROM Medico m JOIN m.especialidades e WHERE e.nombre = :nombreEspecialidad")
     List<Medico> findByEspecialidadesNombre(@Param("nombreEspecialidad") String nombreEspecialidad);
+    @Query("SELECT m FROM Medico m JOIN m.especialidades e WHERE e.idEspecialidad = :idEspecialidad")
+    List<Medico> findByEspecialidadesId(@Param("idEspecialidad") int idEspecialidad);
+
 
 
 }

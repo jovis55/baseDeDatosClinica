@@ -1,7 +1,6 @@
 package com.example.epsproyectofinal.entidad;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +15,6 @@ import java.util.List;
 @Setter
 @ToString
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idUsuario")
-
 public class Paciente extends Usuario implements Serializable {
 
 
@@ -31,6 +29,7 @@ public class Paciente extends Usuario implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private EPS eps;
+
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Ciudad ciudad;

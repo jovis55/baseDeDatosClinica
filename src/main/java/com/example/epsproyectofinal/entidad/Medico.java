@@ -1,5 +1,6 @@
 package com.example.epsproyectofinal.entidad;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,8 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idUsuario")
+
 public class Medico extends Usuario implements Serializable {
 
 
@@ -39,10 +42,11 @@ public class Medico extends Usuario implements Serializable {
             joinColumns = @JoinColumn(name = "medico_id", referencedColumnName =  "idUsuario"),
             inverseJoinColumns = @JoinColumn(name = "especialidad_id", referencedColumnName = "idEspecialidad")
     )
+
     private List<Especialidad> especialidades;
 
 
-    @Column(name = "imagenUrl", length = 200, nullable = true)
+    @Column(name = "imagenUrl", length = 300, nullable = true)
     private String imagenUrl;
 
 

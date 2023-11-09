@@ -1,5 +1,7 @@
 package com.example.epsproyectofinal.entidad;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -25,6 +27,9 @@ public class Especialidad implements Serializable {
 
     @ManyToMany(mappedBy = "especialidades")
     private List<Medico> medicoList;
+
+    @OneToMany(mappedBy = "especialidad")
+    private List<Cita> citaList ;
 
 
 }

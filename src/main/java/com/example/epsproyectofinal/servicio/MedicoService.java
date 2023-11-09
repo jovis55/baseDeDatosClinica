@@ -74,6 +74,11 @@ public class MedicoService implements MedicoIn{
     public List<Medico> obtenerMedicoByEspecialidad(String especialidad) {
         return medicoRepository.findByEspecialidadesNombre(especialidad);
     }
+    @Override
+    public List<Medico> obtenerMedicoByEspecialidadId(int idEspecialidad) {
+
+        return medicoRepository.findByEspecialidadesId(idEspecialidad);
+    }
 
 
 }

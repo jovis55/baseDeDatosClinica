@@ -61,6 +61,7 @@ public class EspecialidadService implements EspecialidadIn {
     @Override
     public List<Especialidad> listarEspecialidades() throws AttributeException {
         try {
+
             return especialidadRepository.findAll();
         } catch (Exception e) {
             throw new AttributeException("No se pudieron listar las especialidades");

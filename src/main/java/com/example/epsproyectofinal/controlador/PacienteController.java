@@ -35,7 +35,7 @@ public class PacienteController {
         @GetMapping(path = "/{idUsuario}")
         public Paciente obtenerPorId(@PathVariable String idUsuario) throws Exception {
             Optional<Paciente> clienteOptional = Optional.ofNullable(pacienteService.obtenerPacienteporId(idUsuario));
-
+            System.out.println("se va a volver a mostrar el paciente");
             if (clienteOptional.isPresent()) {
                 return clienteOptional.get();
             } else {
