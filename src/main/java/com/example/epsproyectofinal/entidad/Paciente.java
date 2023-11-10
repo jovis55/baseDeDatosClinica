@@ -27,9 +27,9 @@ public class Paciente extends Usuario implements Serializable {
     @Column(name="fechaNacimiento", nullable = true)
     private Date fechaNacimiento;
 
+
     @ManyToOne(fetch = FetchType.EAGER)
     private EPS eps;
-
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Ciudad ciudad;

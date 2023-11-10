@@ -28,8 +28,7 @@ public class Especialidad implements Serializable {
     @ManyToMany(mappedBy = "especialidades")
     private List<Medico> medicoList;
 
-    @OneToMany(mappedBy = "especialidad")
-    private List<Cita> citaList ;
+
 
 
 }

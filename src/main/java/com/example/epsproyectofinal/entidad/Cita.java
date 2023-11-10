@@ -33,8 +33,8 @@ public class Cita implements Serializable {
     @Column(name="estado", length = 100, nullable = false)
     private String estado;
 
-    @ManyToOne
-    private Especialidad especialidad;
+    @Column(name="espe", nullable = true)
+    private String espe;
 
     @Column(name="fechaCreacion", nullable = true)
     private LocalDateTime fechaCreacion;
@@ -44,8 +44,6 @@ public class Cita implements Serializable {
 
     @OneToMany(mappedBy = "cita")
     private List<PQRS> pqrsList ;
-
-
 
     @ManyToOne
     private Medico medico;
