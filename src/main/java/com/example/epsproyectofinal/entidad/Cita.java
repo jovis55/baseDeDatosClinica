@@ -1,6 +1,7 @@
 package com.example.epsproyectofinal.entidad;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
@@ -38,6 +39,10 @@ public class Cita implements Serializable {
 
     @Column(name="fechaCreacion", nullable = true)
     private LocalDateTime fechaCreacion;
+
+    @OneToOne(mappedBy = "cita")
+    @JsonBackReference // Evita la recursión infinita
+    private Consulta consulta;
 
     @Column(name="fechaCita", nullable = true)
     private LocalDateTime fechaCita;

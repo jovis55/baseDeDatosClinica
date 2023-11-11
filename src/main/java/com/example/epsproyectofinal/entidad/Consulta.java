@@ -1,5 +1,6 @@
 package com.example.epsproyectofinal.entidad;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -29,8 +30,17 @@ public class Consulta implements Serializable {
     @Column(name="tratamiento", length = 100, nullable = false)
     private String tratamiento;
 
+    @Column(name="medicamentosOpcional", length = 100, nullable = true)
+    private String medicamentosOpcional;
+
     @ManyToMany(mappedBy = "consultaList")
     private List<Medicamento> medicamentoList;
+
+    @OneToOne
+    @JoinColumn(name = "idCita")
+    @JsonManagedReference // Evita la recursión infinita
+    private Cita cita;
+
 
 
 

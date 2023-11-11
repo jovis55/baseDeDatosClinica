@@ -27,7 +27,15 @@ public class ConsultaService implements ConsultaIn {
     public Consulta crearConsulta (Consulta consulta) throws AttributeException {
         return consultaRepository.save(consulta);
     }
-
+    @Override
+    public Consulta obtenerConsulta (int idConsulta) throws AttributeException {
+        Optional<Consulta> consultaOptional = consultaRepository.findById(idConsulta);
+        if (consultaOptional.isPresent()) {
+            return consultaOptional.get();
+        } else {
+            throw new AttributeException("Consulta no encontrada en la base de datos.");
+        }
+    }
     @Override
     public Consulta actualizarConsulta (Consulta consulta) throws AttributeException {
         Optional<Consulta> consultaOptional = consultaRepository.findById(consulta.getIdConsulta());
@@ -38,15 +46,7 @@ public class ConsultaService implements ConsultaIn {
         }
     }
 
-    @Override
-    public Consulta obtenerConsulta (int idConsulta) throws AttributeException {
-        Optional<Consulta> consultaOptional = consultaRepository.findById(idConsulta);
-        if (consultaOptional.isPresent()) {
-            return consultaOptional.get();
-        } else {
-            throw new AttributeException("Consulta no encontrada en la base de datos.");
-        }
-    }
+
 
     @Override
     public void eliminarConsultas (int idConsulta) throws AttributeException {
